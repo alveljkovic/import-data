@@ -67,6 +67,10 @@ This project provides a modular system for:
 - **PHP 8.3** — Modern, high-performance runtime  
 - **Laravel 12** — Robust application framework with built-in support for queues, jobs, events, and file storage  
 - **Composer v2** — Dependency management with optimized autoloading
+- **Roles/Permissions** — Associate users with roles and permissions `spatie/laravel-permission`
+- **Laravel's authentication starter kit** - `laravel/breeze`
+- **Admin LTE** - Easy AdminLTE integration with Laravel `jeroennoten/laravel-adminlte`
+- **Excel/CSV lib** - Supercharged Excel exports and imports in Laravel `maatwebsite/excel`
 
 ---
 
@@ -74,5 +78,53 @@ This project provides a modular system for:
 
 ### 1. Clone the repository
 ```bash
-git clone git@github.com:alveljkovic/massdata-imports.git
-cd massdata-imports
+git clone git@github.com:alveljkovic/import-data.git
+cd import-data
+```
+
+### 2. Install dependencies
+```bash
+composer install
+```
+
+### 3. Install Breeze starter kit
+```bash
+php artisan breeze:install blade 
+```
+
+### 4. Install NPM
+```bash
+npm install
+```
+
+### 5. Generate App key
+```bash
+php artisan key:generate
+```
+
+### 6. Run migrations
+```bash
+php artisan migrate
+```
+
+### 7. Run seeder
+```bash
+php artisan db:seed
+```
+Seeder will seed the DB with:
+- 2 users (credentials for login see in `database/seeders/UsersTableSeeder.php`)
+- 2 Roles (`admin`, `user`)
+- 2 Permissions (`user-management`, `data-import`). These are associated with seeded Admin user
+
+### 8. Build assets
+```bash
+npm run build
+```
+
+### 9. Create Permissions manually
+- Login as Admin User (see credentials in `database/seeders/UsersTableSeeder.php`).
+- Go to User Management -> Permissions
+- Create permissions: `import-orders` and `import-products`
+- Assign all permissions to Admin user
+
+### 10. Have fun
