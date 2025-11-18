@@ -128,3 +128,7 @@ npm run build
 - Assign all permissions to Admin user
 
 ### 10. Have fun
+
+## 5. 🧪 Tests 
+
+Currently, there are no tests implemented because tight deadline so my main focus was on the code design and its organization. Tests should be added at a later stage.
