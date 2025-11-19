@@ -128,6 +128,12 @@ npm run build
 - Assign all permissions to Admin user
 
 ### 10. Have fun
+- Setup env variables for DB connection
+- Set `MAIL_MAILER` to `log`. Emails can be found in: `storage/logs/laravel.log`
+- Start queue worker
+```bash
+php artisan queue:work
+```
 
 ## 5. 🧪 Tests 
 
